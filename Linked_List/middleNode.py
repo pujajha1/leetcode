@@ -1,5 +1,8 @@
 #https://leetcode.com/problems/middle-of-the-linked-list/
 
+
+#It prints linked list from the middle element 
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
