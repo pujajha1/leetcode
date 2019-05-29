@@ -12,7 +12,6 @@ class Solution:
             if list_prime[i]:
                 for j in range(i*i,n,i):
                     list_prime[j]=False
-        print(list_prime)
         for i in list_prime:
             if i:
                 count+=1
