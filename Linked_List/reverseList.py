@@ -27,6 +27,26 @@ class Solution(object):
             current.next=ListNode(e)
             current=current.next
         return dummy.next
+    
+  #reverse using Linked List
+#remember that we need to reverse the linking, not data
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        prev=None
+        curr=head
+        while(curr is not None):
+            nextTemp=curr.next
+            curr.next=prev
+            prev=curr
+            curr=nextTemp
+        return prev
             
         
             
