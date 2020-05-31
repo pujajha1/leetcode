@@ -9,6 +9,8 @@ class Solution:
         for i in l:
             if(l.count(i)==len(strs)):
                 k[i]=len(i)
+                
+        #checking if dictionary is empty, if not, returns the max from dictionary        
         if not bool(k):
             return ""
         else:
