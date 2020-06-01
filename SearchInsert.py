@@ -1,12 +1,9 @@
 #https://leetcode.com/problems/search-insert-position/
 class Solution:
-    def searchInsert(self, nums: 'List[int]', target: 'int') -> 'int':
-        l=[]
-        if target==0:
-            return 0
-        if target>nums[-1]:
-            return len(nums)
-        for i in nums:
-            if(target<=i):
-                l.append((nums.index(i)))
-        return (min(l))
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        if target in nums:
+            return nums.index(target)
+        else:
+            nums.append(target)
+            nums.sort()
+            return nums.index(target)
