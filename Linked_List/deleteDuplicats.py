@@ -29,5 +29,27 @@ class Solution(object):
                 current_pointer=next_pointer
                 next_pointer=current_pointer.next
         return head
+ ####################################################################################################
+#Second Approach
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        if head is None:
+            return None
+        prev=head
+        some=prev.next
+        while(some):
+            if(prev.val==some.val):
+                prev.next=some.next
+                some=prev.next
+            else:
+                prev=prev.next
+                some=prev.next
+        return head
       
         
