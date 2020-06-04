@@ -1,0 +1,20 @@
+https://leetcode.com/explore/featured/card/june-leetcoding-challenge/539/week-1-june-1st-june-7th/3349/#
+class Solution:
+    def twoCitySchedCost(self, costs: List[List[int]]) -> int:
+         #1: sort the input
+        for i in range(len(costs)):
+            j = i + 1
+            while j < len(costs):
+                diff1 = costs[i][0] - costs[i][1]
+                diff2 = costs[j][0] - costs[j][1] 
+                if diff2 < diff1: 
+                    costs[i], costs[j] = costs[j], costs[i]
+                j += 1
+        #2: find the minimum cost.
+        min_cost = 0
+        half = len(costs) // 2
+        for C in costs[:half]:
+            min_cost += C[0]
+        for C in costs[half:]:
+            min_cost += C[1]
+        return min_cost
