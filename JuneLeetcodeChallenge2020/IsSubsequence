@@ -1,0 +1,14 @@
+#https://leetcode.com/problems/is-subsequence/submissions/
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        if not s.strip():
+            return True
+        lis_s=list(s)
+        lis_t=list(t)
+        
+        for i in lis_s:
+            if i in lis_t:
+                lis_t=lis_t[lis_t.index(i)+1:]
+            else:
+                return False
+        return True
