@@ -1,0 +1,10 @@
+#https://leetcode.com/problems/pascals-triangle-ii/
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        pascal_lis=[]
+        for i in range(rowIndex+1):
+            pascal_lis.append([1]*(i+1))
+        for i in range(rowIndex+1):
+            for j in range(1,i):
+                pascal_lis[i][j]=pascal_lis[i-1][j-1]+pascal_lis[i-1][j]
+        return pascal_lis[rowIndex]
