@@ -1,0 +1,23 @@
+#https://leetcode.com/explore/challenge/card/june-leetcoding-challenge/540/week-2-june-8th-june-14th/3357/
+
+#Explanation of below code:
+
+#https://www.youtube.com/watch?v=qs9T_tUHhZs
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        left=0
+        right=len(nums)-1
+        curr=left
+        while(curr<=right):
+            if nums[curr]==2:
+                nums[curr],nums[right]=nums[right],nums[curr]
+                right=right-1
+            elif nums[curr]==0:
+                nums[curr],nums[left]=nums[left],nums[curr]
+                left+=1
+                curr+=1
+            else:
+                curr=curr+1
