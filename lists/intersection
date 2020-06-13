@@ -1,0 +1,6 @@
+#https://leetcode.com/problems/intersection-of-two-arrays/submissions/
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+       # return set.intersection(set(nums1),set(nums2)) #1st Way
+        # return set(nums1).intersection(set(nums2)) #2nd way
+         return set(nums1) & set(nums2)  #3rd Way
