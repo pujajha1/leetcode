@@ -1,0 +1,12 @@
+https://leetcode.com/explore/challenge/card/june-leetcoding-challenge/541/week-3-june-15th-june-21st/3366/
+class Solution:
+    def getPermutation(self, n: int, k: int) -> str:
+        from itertools import permutations
+        l=[]
+        s=""
+        t=""
+        for i in range(1,n+1):
+            s+=str(i)
+        p=permutations(s)
+        [l.append(i) for i in p]
+        return str(t.join(l[k-1]))
