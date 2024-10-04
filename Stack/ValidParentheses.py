@@ -21,3 +21,26 @@ class Solution:
         if stack:
             return False
         return True
+
+
+#2nd Way:
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        paranthesis ={"(":")","{":"}","[":"]"}
+        if len(s) % 2 != 0:
+            return False
+
+        for i in s :
+            if i in paranthesis:
+                stack.append(i)
+            else:
+                if stack ==[] or paranthesis[stack.pop()] != i :
+                    return False
+        if stack==[]:
+            return True 
+        else:
+            return False
+
+        
