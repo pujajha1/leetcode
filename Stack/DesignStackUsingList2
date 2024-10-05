@@ -1,0 +1,44 @@
+class star:
+    def __init__(self):
+        self.stack = list()
+        self.top = 0
+    def push(self,i:int):
+        self.stack.append(i)
+        self.top+=1
+        return self.stack
+
+    def pop(self):
+        if self.top<0:
+            raise Exception("Stack is Empty to POP !!")
+        else:
+            del self.stack[self.top-1]
+            # self.stack.remove(self.top)
+            self.top -= 1
+        return self.stack
+
+    def peek(self):
+        if self.top>0:
+            return self.stack[self.top - 1]
+        else:
+            raise Exception("Stack is Empty to PEEK !!")
+
+
+p_stack = star()
+p_stack.push(4)
+p_stack.push(3)
+p_stack.push(3)
+p_stack.push(9)
+print(p_stack.peek())
+print(p_stack.stack)
+# p_stack.pop()
+# print(p_stack.stack)
+#
+# p_stack.push(6)
+# p_stack.push(9)
+# p_stack.pop()
+# print(p_stack.stack)
+
+
+
+
+
