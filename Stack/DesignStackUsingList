@@ -1,32 +1,46 @@
-#https://leetcode.com/problems/min-stack/submissions/
-class MinStack:
+class star:
+
 
     def __init__(self):
-        """
-        initialize your data structure here.
-        """
-        self.l=[]
-        
+        self.stack = list()
+        self.top = 0
+    def push(self,i:int):
+        self.stack.append(i)
+        self.top+=1
+        return self.stack
 
-    def push(self, x: int) -> None:
-        self.l.append(x)
-        
+    def pop(self):
+        if self.top<0:
+            raise Exception("Stack is Empty to POP !!")
+        else:
+            del self.stack[self.top-1]
+            # self.stack.remove(self.top)
+            self.top -= 1
+        return self.stack
 
-    def pop(self) -> None:
-        self.l.pop()
-        
-
-    def top(self) -> int:
-        return self.l[-1]
-        
-
-    def getMin(self) -> int:
-        return  min(self.l)
+    def peek(self):
+        if self.top>0:
+            return self.stack[self.top - 1]
+        else:
+            raise Exception("Stack is Empty to PEEK !!")
 
 
-# Your MinStack object will be instantiated and called as such:
-# obj = MinStack()
-# obj.push(x)
-# obj.pop()
-# param_3 = obj.top()
-# param_4 = obj.getMin()
+p_stack = star()
+p_stack.push(4)
+p_stack.push(3)
+p_stack.push(3)
+p_stack.push(9)
+print(p_stack.peek())
+print(p_stack.stack)
+# p_stack.pop()
+# print(p_stack.stack)
+#
+# p_stack.push(6)
+# p_stack.push(9)
+# p_stack.pop()
+# print(p_stack.stack)
+
+
+
+
+
